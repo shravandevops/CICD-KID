@@ -18,7 +18,7 @@ pipeline {
             steps {
                 // Assuming SonarQube is configured correctly
                 withSonarQubeEnv('http://13.211.153.80:9000') {
-                    sh '/usr/bin/mvn sonar:sonar' // Use the correct path to Maven executable
+                    sh '/usr/bin/mvn sonarqube:sonarqube' // Use the correct path to Maven executable
                 }
             }
         }
