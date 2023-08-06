@@ -16,7 +16,7 @@ pipeline {
         
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('YOUR_SONARQUBE_SERVER') {
+                withSonarQubeEnv('http://13.211.153.80:9000') {
                     sh 'mvn sonar:sonar'
                 }
             }
