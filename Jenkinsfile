@@ -10,14 +10,16 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                // Use the configured Maven installation name
+                sh 'Maven 3.6.3/bin/mvn clean package'
             }
         }
         
         stage('SonarQube Analysis') {
             steps {
+                // Assuming SonarQube is configured correctly
                 withSonarQubeEnv('http://13.211.153.80:9000') {
-                    sh 'mvn sonar:sonar'
+                    sh 'Maven 3.6.3/bin/mvn sonar:sonar'
                 }
             }
         }
